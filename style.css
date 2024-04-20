@@ -1,0 +1,18 @@
+
+
+#container > div {
+    border: 1px solid rgb(214, 0, 0);
+    flex-grow: 1;
+    box-sizing: border-box;
+}
+#container{
+    border: 2px solid black;
+    height: 500px;
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;   
+}
+
+#container > div:hover{
+    background-color: black;
+}
