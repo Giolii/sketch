@@ -1,26 +1,24 @@
 const container = document.querySelector('#container');
-let column = 16;
+let buttonColor = document.querySelector('.buttonColor');
 let buttonSquare = document.querySelector('.buttonSquare');
-let squareColor = 'black';
-
+let randomColor = Math.floor(Math.random()*16777215).toString(16);
+let column = 16;
 buildSquares(column);
 
 function buildSquares(column){
 for (i=0; i < column*column ; i++){
-    let randomColor = Math.floor(Math.random()*16777215).toString(16);
     const div = document.createElement('div');
     div.classList.add('square');
     container.appendChild(div);
     div.style.width = `${500 / column}px`;
     div.style.height = `${500 / column}px`;
     div.addEventListener("mouseover", () => div.style.backgroundColor = `black`);
-    buttonColor = document.querySelector('.buttonColor');
     buttonColor.addEventListener('click', function random(){
     div.addEventListener("mouseover", () => div.style.backgroundColor = `#${randomColor}`);
+    let randomColor = Math.floor(Math.random()*16777215).toString(16);
     })
 }
 }
-
 
 buttonSquare.addEventListener('click', function changeSquare() {  
     const squares = document.querySelectorAll(".square");
