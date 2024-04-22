@@ -7,7 +7,7 @@ buildSquares(column);
 
 function buildSquares(column){
 for (i=0; i < column*column ; i++){
-    let randomColor = Math.floor(Math.random()*16777215).toString(16);
+
     const div = document.createElement('div');
     div.classList.add('square');
     container.appendChild(div);
@@ -15,7 +15,8 @@ for (i=0; i < column*column ; i++){
     div.style.height = `${500 / column}px`;
     div.addEventListener("mouseover", () => div.style.backgroundColor = `black`);
     buttonColor.addEventListener('click', function random(){
-    div.addEventListener("mouseover", () => {      
+    div.addEventListener("mouseover", () => {   
+        let randomColor = Math.floor(Math.random()*16777215).toString(16);   
     div.style.backgroundColor = `#${randomColor}`;
     let currentBrightness = div.style.filter || 'brightness(1.6)';
     let currentNumber = currentBrightness.match(/[\d.]+/)[0];
